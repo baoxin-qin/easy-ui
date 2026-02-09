@@ -1,9 +1,10 @@
+<script setup lang="ts">
+import { EasyUi } from './components';
+</script>
+
 <template>
-	<p>Hello World!</p>
+	<h1>Use Easy UI</h1>
 </template>
 
 <style scoped>
-p {
-	font-size: 2rem;
-}
 </style>
