@@ -4,14 +4,16 @@ import { ref, useTemplateRef } from 'vue';
 type UiTabsProps = {
     direction: 'horizontal' | 'vertical';
     items: string[];
+    size: number;
 };
 const props = defineProps<UiTabsProps>();
 const tabsIndicatorRef = useTemplateRef('tabsIndicatorRef'); // indicator element reference
 const selectedItemIndex = ref(0); // select first item by default
 
 const dir = props.direction === 'horizontal';
-const itemWidth = dir ? 120 : 30;
-const itemHeight = dir ? 30 : 120;
+const itemSize = props.size || 30;
+const itemWidth = dir ? itemSize * 4 : itemSize;
+const itemHeight = dir ? itemSize : itemSize * 4;
 
 // handle indicator shift
 const handleShift = (index: number) => {
